@@ -7,6 +7,6 @@ _test_
 - りんご
 - ゴリラ
 - ラッパ
-- [x]panda
-- [ ]dammy
-- [ ]mystery
+- [x] panda
+- [ ] apple
+- [ ] egg
