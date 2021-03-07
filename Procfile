@@ -1,1 +1,1 @@
-discordbot: python discordbot.py
+discordbot: cd discordbotchan && python botmain.py
