@@ -34,6 +34,8 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
+    if message.author.bot:
+        return
     if message.content == '0':
         sengen_channel_id = 813989805120946206
         channel_sent = client.get_channel(813992895332876309)
@@ -45,7 +47,7 @@ async def on_message(message):
 
 @client.event
 async def on_message(message):
-    if message.author == client.user:
+    if message.author.bot:
         return
     if message.content == '??help':
         line = '--------------------------------------\n'
