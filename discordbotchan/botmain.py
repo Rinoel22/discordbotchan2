@@ -31,7 +31,7 @@ async def on_ready():
     print('------')
     await client.change_presence(activity=discord.Game(name="から"))
 
-
+ # 凸開始お知らせ
 @client.event
 async def on_message(message):
     if message.author.bot:
@@ -44,7 +44,7 @@ async def on_message(message):
         if message.channel.id == sengen_channel_id:
             await channel_sent.send(embed=embed, delete_after=10.0)
 
-
+　# helpコマンド
 @client.event
 async def on_message(message):
     if message.author.bot:
@@ -112,7 +112,7 @@ async def on_message(message):
         await asyncio.sleep(5)
         await message.delete()
 
-
+　# ロールごとのメンバー一覧表
 @client.event
 async def on_message(message):
     if message.author.bot:
