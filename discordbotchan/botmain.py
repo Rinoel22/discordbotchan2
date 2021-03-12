@@ -22,17 +22,6 @@ async def on_ready():
 
 
 @client.event
-async def on_ready():
-    # 起動したらターミナルにログイン通知が表示される
-    print('ログインしました')
-    print(client.user.name)  # ボットの名前
-    print(client.user.id)  # ボットのID
-    print(discord.__version__)  # discord.pyのバージョン
-    print('------')
-    await client.change_presence(activity=discord.Game(name="から"))
-
-
-@client.event
 async def on_message(message):
     if message.author.bot:
         return
@@ -44,11 +33,6 @@ async def on_message(message):
         if message.channel.id == sengen_channel_id:
             await channel_sent.send(embed=embed, delete_after=10.0)
 
-
-@client.event
-async def on_message(message):
-    if message.author.bot:
-        return
     if message.content == '??help':
         line = '--------------------------------------\n'
         a = '🔸凸宣言・報告・希望のやり方 : ?流れ''\n'
@@ -57,7 +41,8 @@ async def on_message(message):
         d = '🔸現在の周数を修正したい : ?周数''\n'
         e = '🔸現在のボスを修正したい : ?ボス''\n'
         f = '🔸その他: <@&717295065902481488><@&717296038230229003>まで'
-        embed = discord.Embed(title='🥚生卵HELP🥚', description='該当するコマンドを入力してね！''\n''※30秒後に消えるよ''\n' + line + a + b + c + d + e + f,
+        embed = discord.Embed(title='🥚生卵HELP🥚',
+                              description='該当するコマンドを入力してね！''\n''※30秒後に消えるよ''\n' + line + a + b + c + d + e + f,
                               color=discord.Colour.gold())
         await message.channel.send(embed=embed, delete_after=30.0)
         await asyncio.sleep(5)
@@ -69,7 +54,8 @@ async def on_message(message):
         c = '**🔸凸希望**''\n''チャンネル：<#800966966167863326>''\n'
         kieruyo = '`※このメッセージは1分後に消えるよ`'
         embed = discord.Embed(title='凸宣言・報告・希望のやり方', description=a + b + c + kieruyo)
-        embed.set_image(url='https://media.discordapp.net/attachments/818646643842613248/819077983956369468/nagare3.png?width=1410&height=936')
+        embed.set_image(
+            url='https://media.discordapp.net/attachments/818646643842613248/819077983956369468/nagare3.png?width=1410&height=936')
         await message.channel.send(embed=embed, delete_after=60.0)
         await asyncio.sleep(5)
         await message.delete()
@@ -112,11 +98,6 @@ async def on_message(message):
         await asyncio.sleep(5)
         await message.delete()
 
-
-@client.event
-async def on_message(message):
-    if message.author.bot:
-        return
     if message.content == '!ok':
         # チャンネルの取得
         channel = client.get_channel(818363498559963137)
