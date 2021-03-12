@@ -113,7 +113,6 @@ async def on_message(message):
         await message.delete()
 
 
-
 @client.event
 async def on_message(message):
     if message.author.bot:
