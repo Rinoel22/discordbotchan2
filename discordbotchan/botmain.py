@@ -218,6 +218,7 @@ async def on_message(message):
         embed.add_field(name='> 🌙夜勢', value='```''・' + output3 + '```' + line, inline=False)
         embed.add_field(name='> 🦇深夜勢', value='```''・' + output4 + '```' + line, inline=False)
         await edit_message.edit(content=None, embed=embed)
-
+        await asyncio.sleep(5)
+        await message.delete()
 
 client.run(TOKEN)
