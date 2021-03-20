@@ -47,8 +47,26 @@ async def on_message(message):
         embed = discord.Embed(title='🥚生卵HELP🥚',
                               description='該当するコマンドを入力してね！''\n''※30秒後に消えるよ''\n' + line + a + b + c + d + e + f,
                               color=discord.Colour.gold())
-        await message.channel.send(embed=embed, delete_after=30.0)
-        await asyncio.sleep(5)
+        msg = await message.channel.send(embed=embed)
+        dust = '🗑'
+        await msg.add_reaction(dust)
+
+        def reaction_check(reaction, user):
+            are_same_messages = (reaction.message.channel.id == msg.channel.id
+                                 and reaction.message.id == msg.id
+                                 and user.id == message.author.id
+                                 and str(reaction.emoji) == '🗑')
+            return are_same_messages
+
+        try:
+            # wait_for reaction_addを15秒間待ってリアクションが押された際はreaction_checkの関数で確認する。
+            reaction, user = await client.wait_for('reaction_add', timeout=60.0, check=reaction_check)
+        except asyncio.TimeoutError:
+            pass
+        else:
+            # 時間切れにならずかつreaction_checkがあってると返した時はメッセージを削除する。(リアクションが押された)
+            await msg.delete()
+        await asyncio.sleep(3)
         await message.delete()
 
     elif message.content == '?流れ':
@@ -59,8 +77,26 @@ async def on_message(message):
         embed = discord.Embed(title='凸宣言・報告・希望のやり方', description=a + b + c + kieruyo)
         embed.set_image(
             url='https://media.discordapp.net/attachments/818646643842613248/819077983956369468/nagare3.png?width=1410&height=936')
-        await message.channel.send(embed=embed, delete_after=60.0)
-        await asyncio.sleep(5)
+        msg = await message.channel.send(embed=embed)
+        dust = '🗑'
+        await msg.add_reaction(dust)
+
+        def reaction_check(reaction, user):
+            are_same_messages = (reaction.message.channel.id == msg.channel.id
+                                 and reaction.message.id == msg.id
+                                 and user.id == message.author.id
+                                 and str(reaction.emoji) == '🗑')
+            return are_same_messages
+
+        try:
+            # wait_for reaction_addを15秒間待ってリアクションが押された際はreaction_checkの関数で確認する。
+            reaction, user = await client.wait_for('reaction_add', timeout=60.0, check=reaction_check)
+        except asyncio.TimeoutError:
+            pass
+        else:
+            # 時間切れにならずかつreaction_checkがあってると返した時はメッセージを削除する。(リアクションが押された)
+            await msg.delete()
+        await asyncio.sleep(3)
         await message.delete()
 
     elif message.content == '?宣言':
@@ -68,8 +104,26 @@ async def on_message(message):
         b = '書き込み：キャンセル'
         kieruyo = '\n''`※このメッセージは1分後に消えるよ`'
         embed = discord.Embed(title='凸宣言のキャンセル方法', description=a + b + kieruyo)
-        await message.channel.send(embed=embed, delete_after=60.0)
-        await asyncio.sleep(5)
+        msg = await message.channel.send(embed=embed)
+        dust = '🗑'
+        await msg.add_reaction(dust)
+
+        def reaction_check(reaction, user):
+            are_same_messages = (reaction.message.channel.id == msg.channel.id
+                                 and reaction.message.id == msg.id
+                                 and user.id == message.author.id
+                                 and str(reaction.emoji) == '🗑')
+            return are_same_messages
+
+        try:
+            # wait_for reaction_addを15秒間待ってリアクションが押された際はreaction_checkの関数で確認する。
+            reaction, user = await client.wait_for('reaction_add', timeout=60.0, check=reaction_check)
+        except asyncio.TimeoutError:
+            pass
+        else:
+            # 時間切れにならずかつreaction_checkがあってると返した時はメッセージを削除する。(リアクションが押された)
+            await msg.delete()
+        await asyncio.sleep(3)
         await message.delete()
 
     elif message.content == '?凸':
@@ -77,8 +131,26 @@ async def on_message(message):
         b = '書き込み：元に戻す'
         kieruyo = '\n''`※このメッセージは1分後に消えるよ`'
         embed = discord.Embed(title='(報告済みの)凸の取り消し方', description=a + b + kieruyo)
-        await message.channel.send(embed=embed, delete_after=60.0)
-        await asyncio.sleep(5)
+        msg = await message.channel.send(embed=embed)
+        dust = '🗑'
+        await msg.add_reaction(dust)
+
+        def reaction_check(reaction, user):
+            are_same_messages = (reaction.message.channel.id == msg.channel.id
+                                 and reaction.message.id == msg.id
+                                 and user.id == message.author.id
+                                 and str(reaction.emoji) == '🗑')
+            return are_same_messages
+
+        try:
+            # wait_for reaction_addを15秒間待ってリアクションが押された際はreaction_checkの関数で確認する。
+            reaction, user = await client.wait_for('reaction_add', timeout=60.0, check=reaction_check)
+        except asyncio.TimeoutError:
+            pass
+        else:
+            # 時間切れにならずかつreaction_checkがあってると返した時はメッセージを削除する。(リアクションが押された)
+            await msg.delete()
+        await asyncio.sleep(3)
         await message.delete()
 
     elif message.content == '?周数':
@@ -87,8 +159,26 @@ async def on_message(message):
         c = '例）35周目に直す → `/correct 35`'
         kieruyo = '\n''`※このメッセージは1分後に消えるよ`'
         embed = discord.Embed(title='周数の修正方法', description=a + b + c + kieruyo)
-        await message.channel.send(embed=embed, delete_after=60.0)
-        await asyncio.sleep(5)
+        msg = await message.channel.send(embed=embed)
+        dust = '🗑'
+        await msg.add_reaction(dust)
+
+        def reaction_check(reaction, user):
+            are_same_messages = (reaction.message.channel.id == msg.channel.id
+                                 and reaction.message.id == msg.id
+                                 and user.id == message.author.id
+                                 and str(reaction.emoji) == '🗑')
+            return are_same_messages
+
+        try:
+            # wait_for reaction_addを15秒間待ってリアクションが押された際はreaction_checkの関数で確認する。
+            reaction, user = await client.wait_for('reaction_add', timeout=60.0, check=reaction_check)
+        except asyncio.TimeoutError:
+            pass
+        else:
+            # 時間切れにならずかつreaction_checkがあってると返した時はメッセージを削除する。(リアクションが押された)
+            await msg.delete()
+        await asyncio.sleep(3)
         await message.delete()
 
     elif message.content == '?ボス':
@@ -97,8 +187,26 @@ async def on_message(message):
         c = '例）ワイバーン(1ボス)に直す→ `/correct_boss 1`'
         kieruyo = '\n''`※このメッセージは1分後に消えるよ`'
         embed = discord.Embed(title='現在のボスの修正方法', description=a + b + c + kieruyo)
-        await message.channel.send(embed=embed, delete_after=60.0)
-        await asyncio.sleep(5)
+        msg = await message.channel.send(embed=embed)
+        dust = '🗑'
+        await msg.add_reaction(dust)
+
+        def reaction_check(reaction, user):
+            are_same_messages = (reaction.message.channel.id == msg.channel.id
+                                 and reaction.message.id == msg.id
+                                 and user.id == message.author.id
+                                 and str(reaction.emoji) == '🗑')
+            return are_same_messages
+
+        try:
+            # wait_for reaction_addを15秒間待ってリアクションが押された際はreaction_checkの関数で確認する。
+            reaction, user = await client.wait_for('reaction_add', timeout=60.0, check=reaction_check)
+        except asyncio.TimeoutError:
+            pass
+        else:
+            # 時間切れにならずかつreaction_checkがあってると返した時はメッセージを削除する。(リアクションが押された)
+            await msg.delete()
+        await asyncio.sleep(3)
         await message.delete()
 
     if message.content == '!ok':
