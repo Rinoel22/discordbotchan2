@@ -18,13 +18,16 @@ async def on_ready():
     print(client.user.id)  # ボットのID
     print(discord.__version__)  # discord.pyのバージョン
     print('------')
-    await client.change_presence(activity=discord.Game(name="から"))
+    await client.change_presence(activity=discord.Game(name="殻"))
 
 
 @client.event
 async def on_message(message):
     if message.author.bot:
         return
+    if message.content == '!test':
+        await message.channel.send('ちゃんと動いてるよ！')
+
     if message.content == '0':
         sengen_channel_id = 813989805120946206
         channel_sent = client.get_channel(813992895332876309)
@@ -118,10 +121,10 @@ async def on_message(message):
         output4 = '\n''・'.join([member.display_name for member in shinya_member])
         line = '----------------------------'
         embed = discord.Embed(title="(１日目)時間帯別メンバー表", description=line)
-        embed.add_field(name='> 🐔朝活勢', value='```''・' + output1 + '```' + line, inline=False)
-        embed.add_field(name='> ☀️昼勢', value='```''・' + output2 + '```' + line, inline=False)
-        embed.add_field(name='> 🌙夜勢', value='```''・' + output3 + '```' + line, inline=False)
-        embed.add_field(name='> 🦇深夜勢', value='```''・' + output4 + '```' + line, inline=False)
+        embed.add_field(name='> 🐔朝活勢(5:00~8:00)', value='```''・' + output1 + '```' + line, inline=False)
+        embed.add_field(name='> ☀️昼勢(8:00~18:00)', value='```''・' + output2 + '```' + line, inline=False)
+        embed.add_field(name='> 🌙夜勢(18:00~24:00)', value='```''・' + output3 + '```' + line, inline=False)
+        embed.add_field(name='> 🦇深夜勢(24:00~)', value='```''・' + output4 + '```' + line, inline=False)
         await edit_message.edit(content=None, embed=embed)
         # 2日目分
         channel = client.get_channel(818363587029499924)
@@ -141,10 +144,10 @@ async def on_message(message):
         output4 = '\n''・'.join([member.display_name for member in shinya_member])
         line = '------------------------------'
         embed = discord.Embed(title="(2日目)時間帯別メンバー表", description=line)
-        embed.add_field(name='> 🐔朝活勢', value='```''・' + output1 + '```' + line, inline=False)
-        embed.add_field(name='> ☀️昼勢', value='```''・' + output2 + '```' + line, inline=False)
-        embed.add_field(name='> 🌙夜勢', value='```''・' + output3 + '```' + line, inline=False)
-        embed.add_field(name='> 🦇深夜勢', value='```''・' + output4 + '```' + line, inline=False)
+        embed.add_field(name='> 🐔朝活勢(5:00~8:00)', value='```''・' + output1 + '```' + line, inline=False)
+        embed.add_field(name='> ☀️昼勢(8:00~18:00)', value='```''・' + output2 + '```' + line, inline=False)
+        embed.add_field(name='> 🌙夜勢(18:00~24:00)', value='```''・' + output3 + '```' + line, inline=False)
+        embed.add_field(name='> 🦇深夜勢(24:00~)', value='```''・' + output4 + '```' + line, inline=False)
         await edit_message.edit(content=None, embed=embed)
         # 3日目分
         channel = client.get_channel(818363661743161355)
@@ -165,10 +168,10 @@ async def on_message(message):
         output4 = '\n''・'.join([member.display_name for member in shinya_member])
         line = '----------------------------'
         embed = discord.Embed(title="(3日目)時間帯別メンバー表", description=line)
-        embed.add_field(name='> 🐔朝活勢', value='```''・' + output1 + '```' + line, inline=False)
-        embed.add_field(name='> ☀️昼勢', value='```''・' + output2 + '```' + line, inline=False)
-        embed.add_field(name='> 🌙夜勢', value='```''・' + output3 + '```' + line, inline=False)
-        embed.add_field(name='> 🦇深夜勢', value='```''・' + output4 + '```' + line, inline=False)
+        embed.add_field(name='> 🐔朝活勢(5:00~8:00)', value='```''・' + output1 + '```' + line, inline=False)
+        embed.add_field(name='> ☀️昼勢(8:00~18:00)', value='```''・' + output2 + '```' + line, inline=False)
+        embed.add_field(name='> 🌙夜勢(18:00~24:00)', value='```''・' + output3 + '```' + line, inline=False)
+        embed.add_field(name='> 🦇深夜勢(24:00~)', value='```''・' + output4 + '```' + line, inline=False)
         await edit_message.edit(content=None, embed=embed)
         # 4日目用
         channel = client.get_channel(818363720757149757)
@@ -189,10 +192,10 @@ async def on_message(message):
         output4 = '\n''・'.join([member.display_name for member in shinya_member])
         line = '----------------------------'
         embed = discord.Embed(title="(4日目)時間帯別メンバー表", description=line)
-        embed.add_field(name='> 🐔朝活勢', value='```''・' + output1 + '```' + line, inline=False)
-        embed.add_field(name='> ☀️昼勢', value='```''・' + output2 + '```' + line, inline=False)
-        embed.add_field(name='> 🌙夜勢', value='```''・' + output3 + '```' + line, inline=False)
-        embed.add_field(name='> 🦇深夜勢', value='```''・' + output4 + '```' + line, inline=False)
+        embed.add_field(name='> 🐔朝活勢(5:00~8:00)', value='```''・' + output1 + '```' + line, inline=False)
+        embed.add_field(name='> ☀️昼勢(8:00~18:00)', value='```''・' + output2 + '```' + line, inline=False)
+        embed.add_field(name='> 🌙夜勢(18:00~24:00)', value='```''・' + output3 + '```' + line, inline=False)
+        embed.add_field(name='> 🦇深夜勢(24:00~)', value='```''・' + output4 + '```' + line, inline=False)
         await edit_message.edit(content=None, embed=embed)
         # 5日目用
         channel = client.get_channel(818363767812915280)
@@ -213,10 +216,10 @@ async def on_message(message):
         output4 = '\n''・'.join([member.display_name for member in shinya_member])
         line = '----------------------------'
         embed = discord.Embed(title="(5日目)時間帯別メンバー表", description=line)
-        embed.add_field(name='> 🐔朝活勢', value='```''・' + output1 + '```' + line, inline=False)
-        embed.add_field(name='> ☀️昼勢', value='```''・' + output2 + '```' + line, inline=False)
-        embed.add_field(name='> 🌙夜勢', value='```''・' + output3 + '```' + line, inline=False)
-        embed.add_field(name='> 🦇深夜勢', value='```''・' + output4 + '```' + line, inline=False)
+        embed.add_field(name='> 🐔朝活勢(5:00~8:00)', value='```''・' + output1 + '```' + line, inline=False)
+        embed.add_field(name='> ☀️昼勢(8:00~18:00)', value='```''・' + output2 + '```' + line, inline=False)
+        embed.add_field(name='> 🌙夜勢(18:00~24:00)', value='```''・' + output3 + '```' + line, inline=False)
+        embed.add_field(name='> 🦇深夜勢(24:00~)', value='```''・' + output4 + '```' + line, inline=False)
         await edit_message.edit(content=None, embed=embed)
         await asyncio.sleep(5)
         await message.delete()
