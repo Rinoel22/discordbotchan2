@@ -45,11 +45,13 @@ async def on_message(message):
         e = '🔸現在のボスを修正したい : ?ボス''\n'
         f = '🔸その他: <@&717295065902481488><@&717296038230229003>まで'
         embed = discord.Embed(title='🥚生卵HELP🥚',
-                              description='該当するコマンドを入力してね！''\n''※30秒後に消えるよ''\n' + line + a + b + c + d + e + f,
+                              description='該当するコマンドを入力してね！''\n''`※このメッセージは🗑を押して消してね`''\n' + line + a + b + c + d + e + f,
                               color=discord.Colour.gold())
         msg = await message.channel.send(embed=embed)
         dust = '🗑'
         await msg.add_reaction(dust)
+        await asyncio.sleep(3)
+        await message.delete()
 
         def reaction_check(reaction, user):
             are_same_messages = (reaction.message.channel.id == msg.channel.id
@@ -66,20 +68,20 @@ async def on_message(message):
         else:
             # 時間切れにならずかつreaction_checkがあってると返した時はメッセージを削除する。(リアクションが押された)
             await msg.delete()
-        await asyncio.sleep(3)
-        await message.delete()
 
     elif message.content == '?流れ':
         a = '**🔸凸宣言**''\n''チャンネル：<#813989805120946206>''\n'
         b = '**🔸凸報告**''\n''チャンネル：<#813989860037754900>''\n'
         c = '**🔸凸希望**''\n''チャンネル：<#800966966167863326>''\n'
-        kieruyo = '`※このメッセージは1分後に消えるよ`'
+        kieruyo = '`※このメッセージは🗑を押して消してね`'
         embed = discord.Embed(title='凸宣言・報告・希望のやり方', description=a + b + c + kieruyo)
         embed.set_image(
             url='https://media.discordapp.net/attachments/818646643842613248/819077983956369468/nagare3.png?width=1410&height=936')
         msg = await message.channel.send(embed=embed)
         dust = '🗑'
         await msg.add_reaction(dust)
+        await asyncio.sleep(3)
+        await message.delete()
 
         def reaction_check(reaction, user):
             are_same_messages = (reaction.message.channel.id == msg.channel.id
@@ -96,17 +98,17 @@ async def on_message(message):
         else:
             # 時間切れにならずかつreaction_checkがあってると返した時はメッセージを削除する。(リアクションが押された)
             await msg.delete()
-        await asyncio.sleep(3)
-        await message.delete()
 
     elif message.content == '?宣言':
         a = 'チャンネル：<#813989805120946206>''\n'
         b = '書き込み：キャンセル'
-        kieruyo = '\n''`※このメッセージは1分後に消えるよ`'
+        kieruyo = '\n''`※このメッセージは🗑を押して消してね`'
         embed = discord.Embed(title='凸宣言のキャンセル方法', description=a + b + kieruyo)
         msg = await message.channel.send(embed=embed)
         dust = '🗑'
         await msg.add_reaction(dust)
+        await asyncio.sleep(3)
+        await message.delete()
 
         def reaction_check(reaction, user):
             are_same_messages = (reaction.message.channel.id == msg.channel.id
@@ -123,17 +125,17 @@ async def on_message(message):
         else:
             # 時間切れにならずかつreaction_checkがあってると返した時はメッセージを削除する。(リアクションが押された)
             await msg.delete()
-        await asyncio.sleep(3)
-        await message.delete()
 
     elif message.content == '?凸':
         a = 'チャンネル：<#813989860037754900>''\n'
         b = '書き込み：元に戻す'
-        kieruyo = '\n''`※このメッセージは1分後に消えるよ`'
+        kieruyo = '\n''`※このメッセージは🗑を押して消してね`'
         embed = discord.Embed(title='(報告済みの)凸の取り消し方', description=a + b + kieruyo)
         msg = await message.channel.send(embed=embed)
         dust = '🗑'
         await msg.add_reaction(dust)
+        await asyncio.sleep(3)
+        await message.delete()
 
         def reaction_check(reaction, user):
             are_same_messages = (reaction.message.channel.id == msg.channel.id
@@ -150,18 +152,18 @@ async def on_message(message):
         else:
             # 時間切れにならずかつreaction_checkがあってると返した時はメッセージを削除する。(リアクションが押された)
             await msg.delete()
-        await asyncio.sleep(3)
-        await message.delete()
 
     elif message.content == '?周数':
         a = 'チャンネル：<#813989860037754900>''\n'
         b = '書き込み：/correct + 周数''\n'
         c = '例）35周目に直す → `/correct 35`'
-        kieruyo = '\n''`※このメッセージは1分後に消えるよ`'
+        kieruyo = '\n''`※このメッセージは🗑を押して消してね`'
         embed = discord.Embed(title='周数の修正方法', description=a + b + c + kieruyo)
         msg = await message.channel.send(embed=embed)
         dust = '🗑'
         await msg.add_reaction(dust)
+        await asyncio.sleep(3)
+        await message.delete()
 
         def reaction_check(reaction, user):
             are_same_messages = (reaction.message.channel.id == msg.channel.id
@@ -178,18 +180,18 @@ async def on_message(message):
         else:
             # 時間切れにならずかつreaction_checkがあってると返した時はメッセージを削除する。(リアクションが押された)
             await msg.delete()
-        await asyncio.sleep(3)
-        await message.delete()
 
     elif message.content == '?ボス':
         a = 'チャンネル：<#813989860037754900>''\n'
         b = '書き込み：/correct_boss + ボス番号''\n'
         c = '例）ワイバーン(1ボス)に直す→ `/correct_boss 1`'
-        kieruyo = '\n''`※このメッセージは1分後に消えるよ`'
+        kieruyo = '\n''`※このメッセージは🗑を押して消してね`'
         embed = discord.Embed(title='現在のボスの修正方法', description=a + b + c + kieruyo)
         msg = await message.channel.send(embed=embed)
         dust = '🗑'
         await msg.add_reaction(dust)
+        await asyncio.sleep(3)
+        await message.delete()
 
         def reaction_check(reaction, user):
             are_same_messages = (reaction.message.channel.id == msg.channel.id
@@ -206,8 +208,6 @@ async def on_message(message):
         else:
             # 時間切れにならずかつreaction_checkがあってると返した時はメッセージを削除する。(リアクションが押された)
             await msg.delete()
-        await asyncio.sleep(3)
-        await message.delete()
 
     if message.content == '!ok':
         # チャンネルの取得
