@@ -187,7 +187,7 @@ async def on_message(message):
         c = '例）ワイバーン(1ボス)に直す→ `/correct_boss 1`'
         kieruyo = '\n''`※このメッセージは🗑を押して消してね`'
         embed = discord.Embed(title='現在のボスの修正方法', description=a + b + c + kieruyo)
-        msg = await message.channel.send(embed=embed)
+        msg = await message.channel.send(embed=embed, delete_after=60.0)
         dust = '🗑'
         await msg.add_reaction(dust)
         await asyncio.sleep(3)
