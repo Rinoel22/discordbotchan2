@@ -47,7 +47,7 @@ async def on_message(message):
         embed = discord.Embed(title='🥚生卵HELP🥚',
                               description='該当するコマンドを入力してね！''\n''`※このメッセージは🗑を押して消してね`''\n' + line + a + b + c + d + e + f,
                               color=discord.Colour.gold())
-        msg = await message.channel.send(embed=embed)
+        msg = await message.channel.send(embed=embed, delete_after=61.0)
         dust = '🗑'
         await msg.add_reaction(dust)
         await asyncio.sleep(3)
@@ -77,7 +77,7 @@ async def on_message(message):
         embed = discord.Embed(title='凸宣言・報告・希望のやり方', description=a + b + c + kieruyo)
         embed.set_image(
             url='https://media.discordapp.net/attachments/818646643842613248/819077983956369468/nagare3.png?width=1410&height=936')
-        msg = await message.channel.send(embed=embed)
+        msg = await message.channel.send(embed=embed, delete_after=61.0)
         dust = '🗑'
         await msg.add_reaction(dust)
         await asyncio.sleep(3)
@@ -104,7 +104,7 @@ async def on_message(message):
         b = '書き込み：キャンセル'
         kieruyo = '\n''`※このメッセージは🗑を押して消してね`'
         embed = discord.Embed(title='凸宣言のキャンセル方法', description=a + b + kieruyo)
-        msg = await message.channel.send(embed=embed)
+        msg = await message.channel.send(embed=embed, delete_after=61.0)
         dust = '🗑'
         await msg.add_reaction(dust)
         await asyncio.sleep(3)
@@ -131,7 +131,7 @@ async def on_message(message):
         b = '書き込み：元に戻す'
         kieruyo = '\n''`※このメッセージは🗑を押して消してね`'
         embed = discord.Embed(title='(報告済みの)凸の取り消し方', description=a + b + kieruyo)
-        msg = await message.channel.send(embed=embed)
+        msg = await message.channel.send(embed=embed, delete_after=61.0)
         dust = '🗑'
         await msg.add_reaction(dust)
         await asyncio.sleep(3)
@@ -159,7 +159,7 @@ async def on_message(message):
         c = '例）35周目に直す → `/correct 35`'
         kieruyo = '\n''`※このメッセージは🗑を押して消してね`'
         embed = discord.Embed(title='周数の修正方法', description=a + b + c + kieruyo)
-        msg = await message.channel.send(embed=embed)
+        msg = await message.channel.send(embed=embed, delete_after=61.0)
         dust = '🗑'
         await msg.add_reaction(dust)
         await asyncio.sleep(3)
@@ -187,7 +187,7 @@ async def on_message(message):
         c = '例）ワイバーン(1ボス)に直す→ `/correct_boss 1`'
         kieruyo = '\n''`※このメッセージは🗑を押して消してね`'
         embed = discord.Embed(title='現在のボスの修正方法', description=a + b + c + kieruyo)
-        msg = await message.channel.send(embed=embed, delete_after=15.0)
+        msg = await message.channel.send(embed=embed, delete_after=61.0)
         dust = '🗑'
         await msg.add_reaction(dust)
         await asyncio.sleep(3)
@@ -202,7 +202,7 @@ async def on_message(message):
 
         try:
             # wait_for reaction_addを15秒間待ってリアクションが押された際はreaction_checkの関数で確認する。
-            reaction, user = await client.wait_for('reaction_add', timeout=10.0, check=reaction_check)
+            reaction, user = await client.wait_for('reaction_add', timeout=60.0, check=reaction_check)
         except asyncio.TimeoutError:
             pass
         else:
