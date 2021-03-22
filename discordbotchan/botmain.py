@@ -187,7 +187,7 @@ async def on_message(message):
         c = '例）ワイバーン(1ボス)に直す→ `/correct_boss 1`'
         kieruyo = '\n''`※このメッセージは🗑を押して消してね`'
         embed = discord.Embed(title='現在のボスの修正方法', description=a + b + c + kieruyo)
-        msg = await message.channel.send(embed=embed, delete_after=61.0)
+        msg = await message.channel.send(embed=embed, delete_after=15.0)
         dust = '🗑'
         await msg.add_reaction(dust)
         await asyncio.sleep(3)
@@ -202,7 +202,7 @@ async def on_message(message):
 
         try:
             # wait_for reaction_addを15秒間待ってリアクションが押された際はreaction_checkの関数で確認する。
-            reaction, user = await client.wait_for('reaction_add', timeout=60.0, check=reaction_check)
+            reaction, user = await client.wait_for('reaction_add', timeout=10.0, check=reaction_check)
         except asyncio.TimeoutError:
             pass
         else:
